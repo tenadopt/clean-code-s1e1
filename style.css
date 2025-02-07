@@ -17,7 +17,7 @@
   font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .info-banner {
     text-align: center;
   }
@@ -36,14 +36,14 @@
   display: flex;
 }
 ul {
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 li, h3 {
-  list-style:none;
+  list-style: none;
 }
 input,button{
-  outline:none;
+  outline: none;
 }
 .todo-app__button {
   background: none;
@@ -138,14 +138,14 @@ input,button{
 
 /* Edit Task */
 .todo-app__item .todo-app__field_input {
-  display:none
+  display: none
 }
 
 .todo-app__item_edit .todo-app__field.todo-app__field_input {
-  display:inline-block;
-  width:224px
+  display: inline-block;
+  width: 224px
 }
 
 .todo-app__item_edit .todo-app__field {
-  display:none;
+  display: none;
 }
