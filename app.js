@@ -18,10 +18,11 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
   var listItem=document.createElement("li");
+  const uniqTaskId = `task-${Date.now()}`
   listItem.classList.add('todo-app__item');
 
   //input (checkbox)
-  var checkBox=document.createElement("input");//checkbx
+  var checkBox=document.createElement("input");//checkbox
   //label
   var label=document.createElement("label");//label
   //input (text)
@@ -35,10 +36,13 @@ var createNewTaskElement=function(taskString){
 
   label.innerText=taskString;
   label.className='todo-app__field todo-app__field_label';
+  label.setAttribute('for', uniqTaskId)
 
   //Each elements, needs appending
   checkBox.type="checkbox";
   checkBox.className="todo-app__checkbox";
+  checkBox.id = uniqTaskId;
+
   editInput.type="text";
   editInput.className="todo-app__field todo-app__field_input";
 
@@ -63,12 +67,12 @@ var createNewTaskElement=function(taskString){
 
 
 
-var addTask=function(){
+var addTask=function(e){
   console.log("Add Task...");
+  e.preventDefault();
   //Create a new list item with the text from the #new-task:
   if (!taskInput.value) return;
   var listItem=createNewTaskElement(taskInput.value);
-
   //Append listItem to incompleteTaskHolder
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
