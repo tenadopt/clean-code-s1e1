@@ -35,6 +35,8 @@
 .todo-app__input-wrapper {
   display: flex;
 }
+
+/* Reset default styles for ul, li, input, button*/
 ul {
   margin: 0;
   padding: 0;
@@ -46,6 +48,7 @@ input,
 button {
   outline: none;
 }
+
 .todo-app__button {
   background: none;
   border: 0;
